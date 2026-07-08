@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice & Oasis | Multi-Cuisine Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        indian: '#ff9933',   // Saffron
+                        chinese: '#dc2626',  // Vibrant Red
+                        arabic: '#0d9488',   // Rich Teal
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling and base styling */
+        html { scroll-behavior: smooth; }
+        body { background-color: #f8fafc; }
+        
+        /* Custom dotted leader for menu items */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px dashed #e2e8f0;
+            transition: all 0.2s ease-in-out;
+        }
+        .menu-item:hover {
+            border-bottom-color: #94a3b8;
+            transform: translateX(4px);
+        }
+        .menu-name {
+            font-weight: 500;
+            color: #334155;
+            background-color: #fff;
+            padding-right: 8px;
+        }
+        .menu-price {
+            font-weight: 600;
+            color: #0f172a;
+            background-color: #fff;
+            padding-left: 8px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-utensils text-2xl text-indian"></i>
+                    <span class="font-serif font-bold text-2xl tracking-tight text-gray-900">Spice & Oasis</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-indian font-medium transition">Home</a>
+                    <a href="#menu" class="text-gray-600 hover:text-indian font-medium transition">Our Menu</a>
+                    <a href="#contact" class="text-gray-600 hover:text-indian font-medium transition">Contact</a>
+                </div>
+                <a href="#menu" class="bg-gradient-to-r from-indian to-chinese text-white px-6 py-2 rounded-full font-medium hover:shadow-lg hover:opacity-90 transition duration-300">
+                    Order Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Vibrant background gradient -->
+            <div class="absolute inset-0 bg-gradient-to-br from-amber-100 via-rose-100 to-teal-100 opacity-70"></div>
+            <!-- Decorative blobs -->
+            <div class="absolute top-0 left-0 w-72 h-72 bg-indian rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+            <div class="absolute top-0 right-0 w-72 h-72 bg-chinese rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-20 w-72 h-72 bg-arabic rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-gray-900 mb-6 drop-shadow-sm">
+                A Symphony of <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indian via-chinese to-arabic">Global Flavors</span>
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light">
+                Experience the authentic taste of India, the rich heritage of China, and the vibrant spices of Arabia all under one roof.
+            </p>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-gray-900 mb-4">Our Culinary Collections</h2>
+                <div class="h-1 w-24 bg-gradient-to-r from-indian via-chinese to-arabic mx-auto rounded-full"></div>
+            </div>
+
+            <!-- 3 Column Grid for Menus -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-12">
+
+                <!-- Column 1: Indian Food -->
+                <div class="bg-white rounded-2xl shadow-xl border-t-8 border-indian p-8 hover:shadow-2xl transition duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 opacity-5 p-8 pointer-events-none">
+                        <i class="fa-solid fa-pepper-hot text-9xl"></i>
+                    </div>
+                    <div class="text-center mb-8 relative z-10">
+                        <div class="w-16 h-16 mx-auto bg-indian/10 rounded-full flex items-center justify-center mb-4 text-indian">
+                            <i class="fa-solid fa-bowl-rice text-3xl"></i>
+                        </div>
+                        <h3 class="text-3xl font-serif font-bold text-gray-900">Indian Classics</h3>
+                        <p class="text-sm text-gray-500 mt-2">Rich curries & aromatic tandoor</p>
+                    </div>
+                    
+                    <div class="space-y-1 relative z-10">
+                        <div class="menu-item"><span class="menu-name">Samosa Chaat</span><span class="menu-price">₹120</span></div>
+                        <div class="menu-item"><span class="menu-name">Paneer Tikka</span><span class="menu-price">₹250</span></div>
+                        <div class="menu-item"><span class="menu-name">Tandoori Chicken (Half)</span><span class="menu-price">₹350</span></div>
+                        <div class="menu-item"><span class="menu-name">Butter Chicken</span><span class="menu-price">₹380</span></div>
+                        <div class="menu-item"><span class="menu-name">Chicken Tikka Masala</span><span class="menu-price">₹360</span></div>
+                        <div class="menu-item"><span class="menu-name">Mutton Rogan Josh</span><span class="menu-price">₹450</span></div>
+                        <div class="menu-item"><span class="menu-name">Dal Makhani</span><span class="menu-price">₹220</span></div>
+                        <div class="menu-item"><span class="menu-name">Palak Paneer</span><span class="menu-price">₹260</span></div>
+                        <div class="menu-item"><span class="menu-name">Chole Bhature</span><span class="menu-price">₹180</span></div>
+                        <div class="menu-item"><span class="menu-name">Malai Kofta</span><span class="menu-price">₹280</span></div>
+                        <div class="menu-item"><span class="menu-name">Chicken Biryani</span><span class="menu-price">₹320</span></div>
+                        <div class="menu-item"><span class="menu-name">Mutton Dum Biryani</span><span class="menu-price">₹400</span></div>
+                        <div class="menu-item"><span class="menu-name">Veg Pulao</span><span class="menu-price">₹180</span></div>
+                        <div class="menu-item"><span class="menu-name">Garlic Naan</span><span class="menu-price">₹60</span></div>
+                        <div class="menu-item"><span class="menu-name">Butter Naan</span><span class="menu-price">₹50</span></div>
+                        <div class="menu-item"><span class="menu-name">Tandoori Roti</span><span class="menu-price">₹30</span></div>
+                        <div class="menu-item"><span class="menu-name">Masala Dosa</span><span class="menu-price">₹150</span></div>
+                        <div class="menu-item"><span class="menu-name">Gulab Jamun (2 pcs)</span><span class="menu-price">₹80</span></div>
+                        <div class="menu-item"><span class="menu-name">Rasmalai</span><span class="menu-price">₹100</span></div>
+                        <div class="menu-item"><span class="menu-name">Sweet Mango Lassi</span><span class="menu-price">₹90</span></div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Chinese Food -->
+                <div class="bg-white rounded-2xl shadow-xl border-t-8 border-chinese p-8 hover:shadow-2xl transition duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 opacity-5 p-8 pointer-events-none">
+                        <i class="fa-solid fa-dragon text-9xl"></i>
+                    </div>
+                    <div class="text-center mb-8 relative z-10">
+                        <div class="w-16 h-16 mx-auto bg-chinese/10 rounded-full flex items-center justify-center mb-4 text-chinese">
+                            <i class="fa-solid fa-fire-burner text-3xl"></i>
+                        </div>
+                        <h3 class="text-3xl font-serif font-bold text-gray-900">Chinese Wok</h3>
+                        <p class="text-sm text-gray-500 mt-2">Sizzling stir-fries & dim sum</p>
+                    </div>
+
+                    <div class="space-y-1 relative z-10">
+                        <div class="menu-item"><span class="menu-name">Veg Spring Rolls</span><span class="menu-price">₹150</span></div>
+                        <div class="menu-item"><span class="menu-name">Chicken Dim Sum (6 pcs)</span><span class="menu-price">₹200</span></div>
+                        <div class="menu-item"><span class="menu-name">Hot & Sour Soup</span><span class="menu-price">₹130</span></div>
+                        <div class="menu-item"><span class="menu-name">Sweet Corn Chicken Soup</span><span class="menu-price">₹140</span></div>
+                        <div class="menu-item"><span class="menu-name">Kung Pao Chicken</span><span class="menu-price">₹320</span></div>
+                        <div class="menu-item"><span class="menu-name">Sweet & Sour Pork</span><span class="menu-price">₹350</span></div>
+                        <div class="menu-item"><span class="menu-name">Chilli Chicken Dry</span><span class="menu-price">₹280</span></div>
+                        <div class="menu-item"><span class="menu-name">Beef with Broccoli</span><span class="menu-price">₹380</span></div>
+                        <div class="menu-item"><span class="menu-name">Mapo Tofu (Veg)</span><span class="menu-price">₹260</span></div>
+                        <div class="menu-item"><span class="menu-name">Lemon Chicken</span><span class="menu-price">₹300</span></div>
+                        <div class="menu-item"><span class="menu-name">Szechuan Fish</span><span class="menu-price">₹400</span></div>
+                        <div class="menu-item"><span class="menu-name">Veg Fried Rice</span><span class="menu-price">₹180</span></div>
+                        <div class="menu-item"><span class="menu-name">Chicken Fried Rice</span><span class="menu-price">₹220</span></div>
+                        <div class="menu-item"><span class="menu-name">Egg Hakka Noodles</span><span class="menu-price">₹190</span></div>
+                        <div class="menu-item"><span class="menu-name">Chicken Chow Mein</span><span class="menu-price">₹230</span></div>
+                        <div class="menu-item"><span class="menu-name">Mixed Meat Noodles</span><span class="menu-price">₹270</span></div>
+                        <div class="menu-item"><span class="menu-name">Peking Duck (Half)</span><span class="menu-price">₹750</span></div>
+                        <div class="menu-item"><span class="menu-name">Crispy Fried Wontons</span><span class="menu-price">₹160</span></div>
+                        <div class="menu-item"><span class="menu-name">Fried Ice Cream</span><span class="menu-price">₹140</span></div>
+                        <div class="menu-item"><span class="menu-name">Jasmine Tea (Pot)</span><span class="menu-price">₹120</span></div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Arabic Food -->
+                <div class="bg-white rounded-2xl shadow-xl border-t-8 border-arabic p-8 hover:shadow-2xl transition duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 opacity-5 p-8 pointer-events-none">
+                        <i class="fa-solid fa-mosque text-9xl"></i>
+                    </div>
+                    <div class="text-center mb-8 relative z-10">
+                        <div class="w-16 h-16 mx-auto bg-arabic/10 rounded-full flex items-center justify-center mb-4 text-arabic">
+                            <i class="fa-solid fa-star-and-crescent text-3xl"></i>
+                        </div>
+                        <h3 class="text-3xl font-serif font-bold text-gray-900">Arabic Mezze</h3>
+                        <p class="text-sm text-gray-500 mt-2">Authentic grills & fresh flavors</p>
+                    </div>
+
+                    <div class="space-y-1 relative z-10">
+                        <div class="menu-item"><span class="menu-name">Classic Hummus & Pita</span><span class="menu-price">₹160</span></div>
+                        <div class="menu-item"><span class="menu-name">Moutabal</span><span class="menu-price">₹170</span></div>
+                        <div class="menu-item"><span class="menu-name">Falafel Plate (6 pcs)</span><span class="menu-price">₹180</span></div>
+                        <div class="menu-item"><span class="menu-name">Baba Ganoush</span><span class="menu-price">₹170</span></div>
+                        <div class="menu-item"><span class="menu-name">Tabbouleh Salad</span><span class="menu-price">₹150</span></div>
+                        <div class="menu-item"><span class="menu-name">Fattoush Salad</span><span class="menu-price">₹150</span></div>
+                        <div class="menu-item"><span class="menu-name">Chicken Shawarma Plate</span><span class="menu-price">₹220</span></div>
+                        <div class="menu-item"><span class="menu-name">Beef Shawarma Wrap</span><span class="menu-price">₹250</span></div>
+                        <div class="menu-item"><span class="menu-name">Shish Taouk</span><span class="menu-price">₹320</span></div>
+                        <div class="menu-item"><span class="menu-name">Lamb Kebabs</span><span class="menu-price">₹420</span></div>
+                        <div class="menu-item"><span class="menu-name">Mixed Grill Platter</span><span class="menu-price">₹750</span></div>
+                        <div class="menu-item"><span class="menu-name">Chicken Mandi</span><span class="menu-price">₹450</span></div>
+                        <div class="menu-item"><span class="menu-name">Mutton Kabsa</span><span class="menu-price">₹550</span></div>
+                        <div class="menu-item"><span class="menu-name">Batata Harra</span><span class="menu-price">₹160</span></div>
+                        <div class="menu-item"><span class="menu-name">Cheese Manakish</span><span class="menu-price">₹190</span></div>
+                        <div class="menu-item"><span class="menu-name">Zaatar Manakish</span><span class="menu-price">₹150</span></div>
+                        <div class="menu-item"><span class="menu-name">Stuffed Vine Leaves</span><span class="menu-price">₹220</span></div>
+                        <div class="menu-item"><span class="menu-name">Pistachio Baklava</span><span class="menu-price">₹120</span></div>
+                        <div class="menu-item"><span class="menu-name">Cheese Kunafa</span><span class="menu-price">₹180</span></div>
+                        <div class="menu-item"><span class="menu-name">Fresh Mint Lemonade</span><span class="menu-price">₹110</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-12 border-t-4 border-indian">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-utensils text-2xl text-indian"></i>
+                        <span class="font-serif font-bold text-2xl text-white">Spice & Oasis</span>
+                    </div>
+                    <p class="text-sm mb-4">Bringing the finest culinary traditions from India, China, and Arabia straight to your table.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-lg">Opening Hours</h4>
+                    <p class="text-sm mb-2">Monday - Friday: 11:00 AM - 11:00 PM</p>
+                    <p class="text-sm mb-2">Saturday - Sunday: 10:00 AM - 12:00 AM</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-lg">Contact Us</h4>
+                    <p class="text-sm mb-2"><i class="fa-solid fa-location-dot w-5 text-indian"></i> 123 Culinary Avenue, Food City</p>
+                    <p class="text-sm mb-2"><i class="fa-solid fa-phone w-5 text-chinese"></i> +91 98765 43210</p>
+                    <p class="text-sm"><i class="fa-solid fa-envelope w-5 text-arabic"></i> hello@spiceandoasis.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-500">
+                &copy; 2026 Spice & Oasis Restaurant. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
